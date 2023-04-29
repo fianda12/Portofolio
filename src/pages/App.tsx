@@ -1,7 +1,7 @@
 import { useRef, useEffect } from "react";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import "aos/dist/aos.css";
-import Background from "../assets/background.jpg";
+// import Background from "../assets/background.jpg";
 import BackgroundVideo from "../assets/videos/backgroundvideoss.mp4";
 import ImagesOnes from "../assets/Images/ProjectOne.png";
 import ImagesTwos from "../assets/Images/Detail.png";
