@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { Parallax, ParallaxLayer, IParallax } from "@react-spring/parallax";
 import "aos/dist/aos.css";
 import Background from "../assets/background.jpg";
@@ -9,7 +9,6 @@ import ImagesFours from "../assets/Images/BokabedTwo.png";
 
 function App() {
   const parallax = useRef<IParallax>(null);
-
   return (
     <Parallax
       pages={3}
