@@ -1,16 +1,20 @@
+import AOS from "aos";
 import { useRef, useEffect } from "react";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import "aos/dist/aos.css";
-// import Background from "../assets/background.jpg";
 import BackgroundVideo from "../assets/videos/backgroundvideoss.mp4";
-import ImagesOnes from "../assets/Images/ProjectOne.png";
-import ImagesTwos from "../assets/Images/Detail.png";
-import ImagesThrees from "../assets/Images/BokabedOne.png";
-import ImagesFours from "../assets/Images/BokabedTwo.png";
+import ImagesOnes from "../assets/Images/ao6y7-3mqio.svg";
+import ImagesTwos from "../assets/Images/afkvm-1ugfd.svg";
+import ImagesThrees from "../assets/Images/a600b-1p3vo.svg";
+import ImagesFours from "../assets/Images/a8uyq-gyprd.svg";
 
 function App() {
   const appRef = useRef<HTMLElement | null>(null);
   const windowHeightRef = useRef<number>(window.innerHeight);
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   useEffect(() => {
     const handleResize: () => void = () => {
@@ -39,9 +43,13 @@ function App() {
     };
   }, []);
 
+  const handleEmailClick = () => {
+    window.location.href = "mailto:fikriamd12@gmail.com";
+  };
+
   return (
     <Parallax
-      pages={3}
+      pages={4}
       style={{
         backgroundColor: "white",
         height: `${window.innerHeight}px`,
@@ -49,7 +57,7 @@ function App() {
     >
       <ParallaxLayer
         offset={0}
-        speed={0}
+        speed={1}
         factor={3}
         style={{
           // backgroundImage: `linear-gradient( 90deg, rgba(0,0,0,1), rgba(0, 0, 0, 0) ), url(${Background})`,
@@ -70,9 +78,9 @@ function App() {
             width: "100%",
             height: "100%",
             position: "absolute",
-            top: "10%", // Atur posisi vertikal video ke tengah
+            top: "10%",
             left: 0,
-            transform: "translateY(-50%)", // Geser video ke atas sebesar setengah tinggi video
+            transform: "translateY(-50%)",
             zIndex: -1,
           }}
         >
@@ -83,14 +91,12 @@ function App() {
           data-aos-duration="1000"
           data-aos-easing="ease-in-out"
           className="flex justify-start mt-10 sm:mt-80 ml-4 sm:ml-48 font-mono"
-          style={{ zIndex: 1 }} // Atur z-index menjadi 1 untuk teks
+          style={{ zIndex: 1 }}
         >
           <div className="flex flex-col">
             <h1 className="text-white text-7xl">FIKRI AMANDA</h1>
-            <div className="flex justify-center sm:justify-start md:justify-center space-x-3">
+            <div className="flex justify-center sm:justify-start md:justify-start space-x-3">
               <p className="text-white text-2xl">Front-End Engineer</p>
-              <p className="text-white text-2xl">&</p>
-              <p className="text-white text-2xl">Web Development</p>
             </div>
           </div>
         </div>
@@ -99,8 +105,8 @@ function App() {
           data-aos-delay="50"
           data-aos-duration="1000"
           data-aos-easing="ease-in-out"
-          className="flex justify-start mt-10 sm:mt-56 ml-4 sm:ml-48 font-mono text-4xl"
-          style={{ zIndex: 1 }} // Atur z-index menjadi 1 untuk teks
+          className="flex justify-start mt-10 sm:mt-56 ml-4 sm:ml-48 font-mono text-4xl text-white"
+          style={{ zIndex: 1 }}
         >
           <p>Scroll Down</p>
         </div>
@@ -113,12 +119,53 @@ function App() {
           backgroundColor: "white",
         }}
       >
-        <div className="card card-side">
+        <div className="flex flex-col items-center justify-center">
           <div
-            data-aos="fade-up-right"
+            data-aos="fade-up"
             data-aos-duration="2000"
             data-aos-easing="ease-in"
-            data-aos-anchor-placement="center-center"
+            className="flex justify-center"
+          >
+            <h1 className="text-5xl mt-24 font-mono font-bold text-black">
+              MY EXPERTISE
+            </h1>
+          </div>
+          <div className="flex flex-wrap justify-center mt-5">
+            <div className="card bg-transparent border border-black shadow-lg w-full sm:w-11/12 md:w-5/12 lg:w-3/12 h-80 mx-2 my-4 p-0">
+              <div className="card-body p-4">
+                <h2 className="card-title text-2xl text-black mx-auto">
+                  Front-End Engineer
+                </h2>
+                <h1 className="text-black text-2xl font-bold">.</h1>
+                <div className="h-full border-l-2 border-black">
+                  <p className="ml-7 mt-3 text-black text-lg font-mono">
+                    I am passionate about being a frontend engineer with 7
+                    months of experience in development using HTML, JavaScript,
+                    CSS, React, and TypeScript.
+                  </p>
+                </div>
+                <h1 className="text-black text-2xl font-bold">.</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ParallaxLayer>
+      <ParallaxLayer offset={1.6} speed={0.5}>
+        <div
+          data-aos="fade-up"
+          data-aos-duration="2000"
+          data-aos-easing="ease-in"
+          className="flex justify-center mt-20"
+        >
+          <h1 className="my-5 text-5xl font-mono font-bold text-black">
+            MY PROJECT
+          </h1>
+        </div>
+        <div className="card card-side">
+          <div
+            data-aos="fade-down-right"
+            data-aos-duration="2000"
+            data-aos-easing="ease-in"
             className="card-body mx-auto px-4 max-w-7xl sm:px-6 lg:px-8"
           >
             <div className="flex flex-col lg:flex-row">
@@ -145,11 +192,34 @@ function App() {
                 </p>
               </div>
             </div>
+            <div className="my-6 flex justify-end flex-row space-x-7">
+              <h4 className="text-black text-xl font-mono font-semibold">
+                The Team
+              </h4>
+              <div className="text-black font-mono text-sm mt-1">
+                <p>
+                  Front-End <span className="ml-3">Fikri Amanda</span>
+                </p>
+                <p>
+                  Front-End <span className="ml-3">M. Gumilang Tamasakti</span>
+                </p>
+              </div>
+              <div className="text-black font-mono text-sm mt-1">
+                <p>
+                  BackEnd <span className="ml-3">Kharisma Januar</span>
+                </p>
+                <p>
+                  BackEnd <span className="ml-3">Alif Muhammad Hafidz</span>
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-        <div className="card card-side">
+      </ParallaxLayer>
+      <ParallaxLayer offset={2} speed={0.5}>
+        <div className="card card-side mt-14">
           <div
-            data-aos="fade-up-right"
+            data-aos="fade-down-right"
             data-aos-duration="2000"
             data-aos-easing="ease-in"
             className="card-body mx-auto px-4 max-w-7xl sm:px-6 lg:px-8"
@@ -175,12 +245,72 @@ function App() {
                 </p>
               </div>
             </div>
+            <div className="my-6 flex flex-row space-x-7">
+              <h4 className="text-black text-xl font-mono font-semibold">
+                The Team
+              </h4>
+              <div className="text-black font-mono text-sm mt-1">
+                <p>
+                  Front-End <span className="ml-3">Fikri Amanda</span>
+                </p>
+                <p>
+                  Front-End <span className="ml-3">Priscila Dinda</span>
+                </p>
+              </div>
+              <div className="text-black font-mono text-sm mt-1">
+                <p>
+                  BackEnd <span className="ml-3">Eka Cahya Saputra</span>
+                </p>
+                <p>
+                  BackEnd <span className="ml-3">Rischi Yuda</span>
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </ParallaxLayer>
-
-      <ParallaxLayer offset={2} speed={2.5}>
-        <p>Parallax 3</p>
+      <ParallaxLayer
+        offset={3}
+        speed={0.5}
+        style={{
+          background: "black",
+        }}
+      >
+        <div
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-easing="ease-in-out"
+          className="flex flex-col mt-64 mx-auto text-center"
+        >
+          <div className="space-y-9">
+            <p className="text-white font-mono text-xl">What's Next?</p>
+            <p className="text-white font-mono text-7xl">Get In Touch</p>
+            <button
+              className="btn border-white hover:border-teal-400 bg-transparent"
+              onClick={handleEmailClick}
+            >
+              Say Hello
+            </button>
+          </div>
+          <div className="mt-60 space-x-5">
+            <a
+              href="https://github.com/fianda12"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn border-white hover:border-teal-400 bg-transparent mr-4"
+            >
+              GitHub
+            </a>
+            <a
+              href="https://www.linkedin.com/in/fianda/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn border-white hover:border-teal-400 bg-transparent"
+            >
+              LinkedIn
+            </a>
+          </div>
+        </div>
       </ParallaxLayer>
     </Parallax>
   );
