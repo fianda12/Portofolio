@@ -47,6 +47,8 @@ function App() {
     window.location.href = "mailto:fikriamd12@gmail.com";
   };
 
+  
+
   return (
     <Parallax
       pages={4}
@@ -60,10 +62,6 @@ function App() {
         speed={1}
         factor={3}
         style={{
-          // backgroundImage: `linear-gradient( 90deg, rgba(0,0,0,1), rgba(0, 0, 0, 0) ), url(${Background})`,
-          // backgroundSize: "cover",
-          // backgroundPosition: "center",
-          // background: `linear-gradient(90deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0))`,
           width: "100%",
           height: "70%",
           position: "relative",
@@ -280,11 +278,16 @@ function App() {
           data-aos="fade-up"
           data-aos-duration="1000"
           data-aos-easing="ease-in-out"
-          className="flex flex-col mt-64 mx-auto text-center"
+          className="flex flex-col mt-60 mx-auto text-center px-4 lg:px-0 lg:w-4/12"
         >
           <div className="space-y-9">
             <p className="text-white font-mono text-xl">What's Next?</p>
             <p className="text-white font-mono text-7xl">Get In Touch</p>
+            <p className="text-white font-mono text-xl">
+              Although I am currently looking for opportunities, my inbox is
+              always open. Whether you have questions or just want to say hello,
+              I'll try my best to get in touch!
+            </p>
             <button
               className="btn border-white hover:border-teal-400 bg-transparent"
               onClick={handleEmailClick}
@@ -292,7 +295,7 @@ function App() {
               Say Hello
             </button>
           </div>
-          <div className="mt-60 space-x-5">
+          <div className="mt-8 space-x-5">
             <a
               href="https://github.com/fianda12"
               target="_blank"
